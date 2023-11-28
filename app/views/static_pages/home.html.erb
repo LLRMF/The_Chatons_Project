@@ -6,3 +6,11 @@
     <%= link_to "Voir les photos", class: "btn btn-dark btn-lg" %>
   </div>
 </header>
+
+<body>
+
+  <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: "0"), class: "btn btn-primary", remote: true %>
+
+</body>
+
+
