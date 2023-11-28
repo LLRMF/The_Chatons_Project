@@ -24,4 +24,15 @@ Rails.application.routes.draw do
   # Static pages
   get "about", to: "static_pages#about"
   get "contact", to: "static_pages#contact"
+
+
+
+  scope '/checkout' do
+    post 'create', to: 'checkout#create', as: 'checkout_create'
+    get 'success', to: 'checkout#success', as: 'checkout_success'
+    get 'cancel', to: 'checkout#cancel', as: 'checkout_cancel'
+end
+
+
+  
 end
