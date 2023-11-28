@@ -3,14 +3,6 @@
   <div class="container text-center">
     <h1 class="display-4">Bienvenue chez The_Chatons_Project</h1>
     <p class="lead">Découvrez avec nous les meilleurs photos de chatons ! </p>
-    <%= link_to "Voir les photos", class: "btn btn-dark btn-lg" %>
+    <%= link_to "Voir les photos", items_path , class: "btn btn-secondary btn-lg" %>
   </div>
 </header>
-
-<body>
-
-  <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: "0"), class: "btn btn-primary", remote: true %>
-
-</body>
-
-

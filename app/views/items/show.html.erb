@@ -1,12 +1,14 @@
+<%= link_to "Revenir aux photos", items_path , class: "btn btn-secondary btn-lg m-4" %>
+
 <div class="container mt5">
-  <div class="row justify-content-center">
+  <div class="row">
     <div class="card">
+      <img src="<%= @item.image_url %>" class="card-img-top img-fluid">
       <div class="card-body">
         <h2 class="card-title text-center"><%= @item.title %></h2>
         <p><strong>Description :</strong> <%= @item.description %> </p>
         <p><strong>Prix :</strong> <%= @item.price %></p>
-        <p>Ceci est l'endroit ou on placera l'img</p>
-        <img src="<% @item.image_url%>">
+        <%= link_to "Ajouté au panier", add_to_cart_item_path(@item.id), methode: :post, class: "btn btn-dark btn-lg" %>
       </div>
     </div>
   </div>
