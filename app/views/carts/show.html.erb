@@ -1,0 +1,12 @@
+<h1>Carts#show</h1>
+<h1>Votre Panier</h1>
+<% if @cart_items.any? %>
+  <ul>
+    <% @cart_items.each do |cart_item| %>
+      <li><%= cart_item.item.title %> - <%= cart_item.quantity %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Dommage, votre panier est vide !</p>
+  <p>Allez vite le remplir, on se retrouve après.</p>
+<% end %>

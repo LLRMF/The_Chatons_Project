@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  resources :carts, only: [:index, :create, :show] do
+    member do
+      post 'add_item/:item_id', action: :add_item, as: :add_item
+      delete 'remove_item/:item_id', action: :remove_item, as: :remove_item
+    end
+  end
+  
+  resources :orders
+  resources :items, only: [:index, :show]
   # Defines the root path route ("/")
   root "static_pages#home"
 
