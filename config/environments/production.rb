@@ -2,7 +2,16 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_mailer.default_url_options = { :host => 'RENTER LA BONNE ADDRESS ICI/' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'in-v3.mailjet.com',
+    port: 587,
+    user_name: ENV['MAILJET_LOGIN'],
+    password: ENV['MAILJET_PWD'],
+    authentication: :plain,
+    enable_starttls_auto: true
+  }
   # Code is not reloaded between requests.
   config.enable_reloading = false
 
