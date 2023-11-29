@@ -599,6 +599,7 @@ progress {
 .lead {
   font-size: 1.25rem;
   font-weight: 300;
+  color: black;
 }
 
 .display-1 {
@@ -638,6 +639,7 @@ progress {
   font-size: calc(1.475rem + 2.7vw);
   font-weight: 300;
   line-height: 1.2;
+  color: black;
 }
 @media (min-width: 1200px) {
   .display-4 {
