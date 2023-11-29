@@ -1,11 +1,36 @@
-
-
-
 <div class="container">
-    <div class="row lg-10  rounded mt-3 d-flex justify-content" style="background-color:#e8e8e6;">
-      <div class="row mt-3 mr-5">
-        <h1>Page de Profil</h1>
+  <div class="row lg-10  rounded mt-3 d-flex justify-content" style="background-color:#e8e8e6;">
+    <div class="row mt-3 mr-5">
+      <h1>Mon Profil</h1>
+    </div>
+    <div class="row lg-10 d-flex justify-content-around rounded ">
+      <div class="col-5 border --bs-success-border-subtle rounded">
+        <div class="col lg-2 d-flex justify-content-around rounded m-2" >
+          <img src="https://img.freepik.com/free-photo/close-up-adorable-kitten-indoors_23-2150782471.jpg?t=st=1701263341~exp=1701266941~hmac=c86ec6048ab10212b73049f43593fc233659e64550267a28214cbb0c5403c628&w=740" class="rounded-circle" style="width: 50%; height: auto;">
+        </div>
+        <div class="row mt-3">
+          <h6>Prénom : <%= @user.first_name %></h6>
+          <h6>Nom : <%= @user.last_name %></h6> 
+          <h6>Email :<%= @user.email %>
+          </h6>
+        </div>
+        <div class="col-12 mx-auto border border-light d-flex justify-content-center rounded mt-3 p-5" style="background-color:#a9a8a0" >
+          <h5 style="max-width: 100%; word-wrap: break-word;"> Description <%= @user.description %></h5>
+        </div>
+        <div class="row lg-12 d-flex justify-content-around margin m-5">
+          <a href="<%= edit_user_registration_path %>" class="badge bg-primary p-3" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-primary')">Éditer mon Profil</a>
+          <a href="<%= cancel_user_registration_path %>" class="badge bg-warning p-3" data-method="delete" data-confirm="Êtes-vous sûr de vouloir supprimer votre profil ?" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-warning')">Supprimer mon profil</a>
+        </div>
+        <script>
+          function changeBackgroundColor(element, newClass) {
+            element.classList.remove('bg-primary', 'bg-secondary', 'bg-warning');
+            element.classList.add(newClass);
+          }
+        </script>
       </div>
+
+                     
+                     
         <div class="row lg-10 d-flex justify-content-around rounded ">
           <div class="col-5 border --bs-success-border-subtle rounded">
             <div class="col lg-2 d-flex justify-content-around rounded m-2" >
@@ -63,17 +88,9 @@
                 </tbody>
               </table>
             </div>
-          </div>
+      </div>
         </div>
+      </div>
     </div>
-</div>
-
-
-
-
-
-
-
-
-
+  </div>
 </div>
