@@ -45,7 +45,7 @@ image_urls = [
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGibvI6KyyfqwPBXVqAvW_wco_L32oTiBEJw&usqp=CAU',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMhdaRUYjbUkFqC1eAq24LP-auFOKCB338Nw&usqp=CAU',
 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSmu0LKIcG1Qvyz_aqp1rc-wSkU9YQmbQbts-mG--psoxFTA3eGEgli76ZBjWmBfFdCEc&usqp=CAU',
-]
+].shuffle
 
 
 # Création de 20 articles aléatoires
@@ -55,7 +55,7 @@ items = []
     title: Faker::Superhero.power,
     description: Faker::Lorem.characters(number: 100, min_alpha: 4),
     price: Faker::Number.decimal(l_digits: 2),
-    image_url: image_urls.sample,
+    image_url: image_urls.pop,
 
   )
   items << item  # Stocke les articles créés dans un tableau
