@@ -1,6 +1,7 @@
-<h1>liste items</h1>
-
-
+<br>
+<div id="page_title" style="text-align: center">
+<h1>Liste Des Photos</h1>
+</div>
 
 
 <div class="container mt-5">
@@ -11,9 +12,10 @@
           <img src="<%= item.image_url %>" class="card-img-top img-fluid">
           <div class="card-body">
             <h2 class="card-title text-center"><%= item.title %></h2>
-            <p><strong>Prix :</strong> <%= item.price %></p>
-            <%= link_to "Voir en détails", item_path(item) , class: "btn btn-dark btn-lg" %>
-            <%= button_to "Ajouter au panier", add_to_cart_item_path(item.id), remote: true, method: :post, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: item.id } %>
+          <div class="d-flex justify-content-around">
+                <%= link_to "Voir en détails", item_path(item) , class: "btn btn-success" %>
+                <%= button_to "Ajouter au panier", add_to_cart_item_path(item.id), remote: true, method: :post, form_class: "form-inline", class: "btn btn-warning add-to-cart", data: { item_id: item.id } %>
+              </div>            
           </div>
         </div>
       </div>

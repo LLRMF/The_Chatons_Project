@@ -8,7 +8,7 @@
         <h2 class="card-title text-center"><%= @item.title %></h2>
         <p><strong>Description :</strong> <%= @item.description %> </p>
         <p><strong>Prix :</strong> <%= @item.price %></p>
-        <%= button_to "Ajouter au panier", add_to_cart_item_path(@item.id), remote: true, method: :post, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: @item.id } %>
+        <%= button_to "Ajouter au panier", add_to_cart_item_path(@item.id), remote: true, method: :post, form_class: "form-inline", class: "btn btn-warning add-to-cart", data: { item_id: @item.id } %>
       </div>
     </div>
   </div>
