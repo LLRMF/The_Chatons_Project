@@ -13,7 +13,7 @@
             <h2 class="card-title text-center"><%= item.title %></h2>
             <p><strong>Prix :</strong> <%= item.price %></p>
             <%= link_to "Voir en détails", item_path(item) , class: "btn btn-dark btn-lg" %>
-            <%= link_to "Ajouté au panier", add_to_cart_item_path(item.id), methode: :post, class: "btn btn-dark btn-lg" %>
+            <%= button_to "Ajouter au panier", add_to_cart_item_path(item.id), remote: true, method: :post, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: item.id } %>
           </div>
         </div>
       </div>

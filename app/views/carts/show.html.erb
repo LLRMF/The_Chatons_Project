@@ -5,7 +5,7 @@
     <% @cart_items.each do |cart_item| %>
       <li>
         <%= cart_item.item.title %> - <%= cart_item.quantity %>
-        <%= button_to "Retirer du panier", remove_item_path(item_id: cart_item.item.id), method: :delete, data: { confirm: 'Êtes-vous sûr ?' } %>
+        <%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %>
       </li>
     <% end %>
   </ul>
