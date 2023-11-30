@@ -157,3 +157,5 @@ footer .ft {
   border: 1px solid black;
   color: black;
 }
+a:hover{transform: scale(1.1);transition: all 0.5s;}
+a{transition: all 0.5s;}
