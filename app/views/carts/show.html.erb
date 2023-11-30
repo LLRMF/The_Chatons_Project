@@ -1,17 +1,31 @@
-<h1>Votre Panier</h1>
-<% if @cart_items.any? %>
-  <ul>
-    <% @cart_items.each do |cart_item| %>
-      <li>
-        <%= cart_item.item.title %> - 
-        <%= number_to_currency(cart_item.item.price * cart_item.quantity) %>
-        <%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %>
-      </li>
-    <% end %>
-  </ul>
-  <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
-  <%= button_to "Nouvelle commande", orders_path, method: :post %>
-<% else %>
-  <p>Votre panier est vide !</p>
-  <p>Allez vite le remplir, on se retrouve après.</p>
-<% end %>
+<div class="container mt-4 text-center">
+  <h1 class="mb-4">Mon Panier</h1>
+  <% if @cart_items.any? %>
+    <ul class="list-unstyled">
+      <% @cart_items.each do |cart_item| %>
+        <li>
+          <%= cart_item.item.title %> - 
+          <%= number_to_currency(cart_item.item.price * cart_item.quantity) %>
+          <%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %>
+        </li>
+      <% end %>
+    </ul>
+    <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
+    <%= button_to "Nouvelle commande", orders_path, method: :post %>
+  <% else %>
+    <p class="text-center">Oh non ! Votre panier est vide !</p>
+    <p class="text-center">Allez vite le remplir de magnifiques photos de petits chatons trop mignons ! On se retrouve juste après !</p>
+    <div class="row justify-content-center mt-4">
+      <div class="col-md-4 mb-4">
+        <a href="http://127.0.0.1:3000/items" class="text-decoration-none">
+          <div class="card border rounded mx-auto" style="width: 18rem;"> <!-- Adjusted card width -->
+            <img src="https://images.pexels.com/photos/1056252/pexels-photo-1056252.jpeg" alt="Image" class="card-img-top img-fluid"> <!-- Added card-img-top class -->
+            <div class="card-body">
+              <p class="card-text">Cliquez sur moi pour voir mes copains !</p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  <% end %>
+</div>
