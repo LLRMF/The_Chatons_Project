@@ -1,46 +1,81 @@
+/* Styles généraux */
+body {
+  background-image: url('/assets/bk3.jpg');
+  background-size: cover;
+}
+
 .btn-secondary {
-  background-color:#E7BCDE;
-  
+  background-color: #E7BCDE;
 }
-.footer-custom{ color :rgb(15, 11, 11)}
+
+.footer-custom,
+.ft {
+  color: #E7BCDE;
+}
+
+/* Couleur des liens dans le footer - ajustez cette valeur pour correspondre à la couleur grise de votre navbar */
+.footer-custom a {
+  color: #E7BCDE;
+}
+
+/* Changement de couleur des liens du footer au survol */
+.footer-custom a:hover {
+  color: #ffffff;
+  /* Blanc au survol */
+}
+
+.nav-link {
+  color: #E7BCDE;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
 .custom-bg-color {
-  background-color:#BB9CC0 
+  background-color: #BB9CC0;
 }
+
 .text-custom-color {
   color: rgb(226, 219, 219);
 }
 
-body {
-  background-image: url('/assets/bk3.jpg');
-  background-size: cover; }
+/* Styles pour .carrejaune_accueil */
+.carrejaune_accueil div {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+}
 
-  .ft{color:aliceblue}
+/* Styles pour .carregris_accueil */
+.carregris_accueil {
+  margin-top: 30px;
+  padding: 20px;
+}
 
+/* Styles pour #div-a-masquer */
+#div-a-masquer {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
 
-  
-  .carrejaune_accueil div{background: rgba(255, 255, 255, 0.2);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.4px);
-    -webkit-backdrop-filter: blur(7.4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 20px;}
-  .carregris_accueil{
-    margin-top: 30px; padding: 20px;
-  }
-
-  
-/* Ajoutez ces styles pour rendre les cartes plus stylées */
+/* Styles pour .card */
 .card {
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #ccc;
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-/* Rendez les boutons plus stylés */
+/* Styles pour les boutons */
 .btn {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
@@ -50,32 +85,27 @@ body {
   color: #fff;
 }
 
-/* Ajoutez un peu d'espacement entre les cartes */
+/* Styles supplémentaires */
 .mb-4 {
   margin-bottom: 20px;
 }
 
-/* Centrez le titre de la carte */
 .card-title {
   text-align: center;
 }
 
-/* Ajoutez de l'espace autour du titre */
 .card-body {
   padding: 20px;
 }
 
-/* Rendez l'image de la carte arrondie */
 .card-img-top {
   border-radius: 8px 8px 0 0;
 }
 
-/* Centrez les boutons dans la carte */
 .d-flex {
   justify-content: center;
 }
 
-/* Ajoutez une ombre légère sous la liste des photos */
 #page_title {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 20px;
