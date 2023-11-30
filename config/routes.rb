@@ -2,7 +2,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "static_pages#home"
   devise_for :users
-  resources :users
+
+
+  resources :users do
+    resources :avatars, only: [:create] #ajout pour active storage
+  end
+
+  resources :orders
   
   # Static pages
   get "about", to: "static_pages#about"
