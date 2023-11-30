@@ -1,0 +1,11 @@
+Salut <%= @user.email %> !
+
+Nous avons bien reçu ton paiement de <%= number_to_currency(calculate_total_amount(@order.order_items)) %>.
+
+Voici donc ta commande :
+<% @order.order_items.each do |order_item| %>
+  Titre du produit : <%= order_item.item.title %>
+  Image: <%= order_item.item.image_url %>
+<% end %>
+
+À très vite sur The-Chaton-Project.fr !
