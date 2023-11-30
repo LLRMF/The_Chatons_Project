@@ -29,6 +29,9 @@ class OrdersController < ApplicationController
       @order = current_user.orders.build
       if @order.save
         create_order_items(current_user.cart.cart_items)
+
+        OrderMailer.order_confirmation(current_user, @order).deliver_now
+
         redirect_to @order, notice: 'La commande a été créée avec succès.'
       else
         render :new
