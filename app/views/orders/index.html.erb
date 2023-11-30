@@ -1,23 +1,13 @@
-<!-- app/views/orders/index.html.erb -->
-<div class="container mt-5">
-  <h1>All Orders</h1>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>User ID</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @orders.each do |order| %>
-        <tr>
-          <td><%= order.user_id %></td>
-          <td>
-            <%= link_to 'Show', order_path(@order.id), class: 'btn btn-primary' %>
-            <%= link_to 'Cancel Order', cancel_order_path(order), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+<h1>Vos commandes</h1>
+<% if @orders.present? %>
+  <ul>
+    <% @orders.each do |order| %>
+      <li>
+        <%= link_to "Commande ##{order.id}", order_path(order) %>
+        <!-- Vous pouvez ajouter d'autres informations sur la commande ici si nécessaire -->
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Vous n'avez passé aucune commande.</p>
+<% end %>

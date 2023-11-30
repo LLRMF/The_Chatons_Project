@@ -11,7 +11,7 @@
       <% end %>
     </ul>
     <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
-    <%= button_to "Nouvelle commande", orders_path, method: :post %>
+        <%= button_to "Passer commande", checkout_create_path(total: @total_amount, cart_id: @cart.id), class: "btn btn-primary", data: {turbo: false} %>
   <% else %>
     <p class="text-center">Oh non ! Votre panier est vide !</p>
     <p class="text-center">Allez vite le remplir de magnifiques photos de petits chatons trop mignons ! On se retrouve juste après !</p>
