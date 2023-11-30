@@ -28,12 +28,6 @@
           <a href="<%= edit_user_registration_path %>" class="badge bg-primary p-3" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-primary')">Éditer mon Profil</a>
           <a href="<%= cancel_user_registration_path %>" class="badge bg-warning p-3" data-method="delete" data-confirm="Êtes-vous sûr de vouloir supprimer votre profil ?" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-warning')">Supprimer mon profil</a>
         </div>
-        <script>
-          function changeBackgroundColor(element, newClass) {
-            element.classList.remove('bg-primary', 'bg-secondary', 'bg-warning');
-            element.classList.add(newClass);
-          }
-        </script>
       </div>
       <div class="col-5 border border-secondary rounded mb-5">
         <h2>Mes commandes passées</h2>
@@ -64,5 +58,9 @@
 <script>
   function submitForm() {
     document.getElementById('avatar-form').submit();
+  }
+  function changeBackgroundColor(element, newClass) {
+    element.classList.remove('bg-primary', 'bg-secondary', 'bg-warning');
+    element.classList.add(newClass);
   }
 </script>
