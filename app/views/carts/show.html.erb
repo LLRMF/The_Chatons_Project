@@ -1,17 +1,28 @@
 <div class="container mt-4 text-center">
   <h1 class="mb-4">Mon Panier</h1>
   <% if @cart_items.any? %>
-    <ul class="list-unstyled">
-      <% @cart_items.each do |cart_item| %>
-        <li>
-          <%= cart_item.item.title %> - 
-          <%= number_to_currency(cart_item.item.price * cart_item.quantity) %>
-          <%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %>
-        </li>
-      <% end %>
-    </ul>
-    <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
-        <%= button_to "Passer commande", checkout_create_path(total: @total_amount, cart_id: @cart.id), class: "btn btn-primary", data: {turbo: false} %>
+  <div class="table-bordered">
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">Article</th>
+          <th scope="col">Prix</th>
+          <th scope="col">      </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart_items.each do |cart_item| %>
+          <tr>
+            <td><img src="<%= cart_item.item.image_url %>" class="card-img-top img-fluid"></td>
+            <td><%= cart_item.item.price %></td>
+            <td><%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
+  <%= button_to "Passer commande", checkout_create_path(total: @total_amount, cart_id: @cart.id), class: "btn btn-primary", data: {turbo: false} %>
   <% else %>
     <p class="text-center">Oh non ! Votre panier est vide !</p>
     <p class="text-center">Allez vite le remplir de magnifiques photos de petits chatons trop mignons ! On se retrouve juste après !</p>
