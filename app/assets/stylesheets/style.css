@@ -1,6 +1,6 @@
 /* Styles généraux */
 body {
-background-image: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url("https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-attachment: fixed;
 }
@@ -152,13 +152,20 @@ footer .ft {
   color: #000;
 }
 
-  a.bg-primary {
+a.bg-primary {
   background-color: rgba(255, 255, 255, 0.5) !important;
   border: 1px solid black;
   color: black;
 }
-a:hover{transform: scale(1.1);transition: all 0.5s;}
-a{transition: all 0.5s;}
+
+a:hover {
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+
+a {
+  transition: all 0.5s;
+}
 
 #div-a-masquer {
   /* border: 1px solid black; */
@@ -179,16 +186,18 @@ a{transition: all 0.5s;}
   font-weight: bolder;
 
 }
-#div-a-masquer a:hover , #div-a-masquer button:hover{
-transform: scale(1)!important;
-background:black;
-color: white; 
-transition: all 0.5s;
+
+#div-a-masquer a:hover,
+#div-a-masquer button:hover {
+  transform: scale(1) !important;
+  background: black;
+  color: white;
+  transition: all 0.5s;
 }
 
 #div-a-masquer .add-to-cart {
-  width: 100%!important;
-  border-right:none ;
+  width: 100% !important;
+  border-right: none;
   background: #E7BCDE;
   border-radius: 20px;
   color: black;
