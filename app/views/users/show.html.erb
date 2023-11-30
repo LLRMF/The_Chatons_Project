@@ -25,6 +25,7 @@
           <h5 style="max-width: 100%; word-wrap: break-word;"> Description <%= @user.description %></h5>
         </div>
         <div class="row lg-12 d-flex justify-content-around margin m-5">
+          <p><%= link_to "Modifier le profil", edit_user_registration_path, class: "btn btn-primary" %></p>
           <a href="<%= edit_user_registration_path %>" class="badge bg-primary p-3" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-primary')">Éditer mon Profil</a>
           <a href="<%= cancel_user_registration_path %>" class="badge bg-warning p-3" data-method="delete" data-confirm="Êtes-vous sûr de vouloir supprimer votre profil ?" style="width: 150px;" onmouseover="changeBackgroundColor(this, 'bg-secondary')" onmouseout="changeBackgroundColor(this, 'bg-warning')">Supprimer mon profil</a>
         </div>
@@ -36,46 +37,27 @@
         </script>
       </div>
       <div class="col-5 border border-secondary rounded mb-5">
-        <h2>Mes commandes passées</h2>
-        <div class="bs-component">
-          <table class="table table-hover text-center">
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Date</th>
-                <th scope="col">Prix</th>
-                <th scope="col">Détail</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="table-secondary">
-                <th scope="row">Active</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-              <tr class="table-light">
-                <th scope="row">Light</th>
-                <td>Column content</td>
-                <td>Column content</td>
-                <td>Column content</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+  <h2>Mes commandes passées</h2>
+  <div class="bs-component">
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Date</th>
+          <th scope="col">Détail</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @orders.each do |order| %>
+          <tr>
+            <td><%= order.id %></td>
+            <td><%= order.created_at %></td>
+            <td><%= link_to "Voir détail", order_path(order) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-
-  <div>
-
-
-
-
-
-
-  </div>
-
 </div>
 
 <script>
