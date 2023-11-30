@@ -12,6 +12,11 @@
             <p><img src="https://img.freepik.com/free-photo/close-up-adorable-kitten-indoors_23-2150782471.jpg?t=st=1701263341~exp=1701266941~hmac=c86ec6048ab10212b73049f43593fc233659e64550267a28214cbb0c5403c628&w=740" class="rounded-circle" style="width: 50%; height: auto;"></p>
           <%end%>
         </div>
+        <div>
+            <%= form_tag user_avatars_path(@user), multipart: true, id: 'avatar-form' do %>
+            <%= file_field_tag :avatar, onchange: 'submitForm()' %>
+            <% end %>
+        </div>
         <div class="row mt-3">
           <h6>Prénom : <%= @user.first_name %></h6>
           <h6>Nom : <%= @user.last_name %></h6> 
