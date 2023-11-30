@@ -2,6 +2,7 @@
 body {
   background-image: url('/assets/bk3.jpg');
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .btn-secondary {
@@ -10,18 +11,15 @@ body {
 
 .footer-custom,
 .ft {
-  color: #E7BCDE;
+  color: #505050;
 }
 
-/* Couleur des liens dans le footer - ajustez cette valeur pour correspondre à la couleur grise de votre navbar */
 .footer-custom a {
-  color: #E7BCDE;
+  color: #505050;
 }
 
-/* Changement de couleur des liens du footer au survol */
 .footer-custom a:hover {
   color: #ffffff;
-  /* Blanc au survol */
 }
 
 .nav-link {
@@ -111,4 +109,51 @@ body {
   padding: 20px;
   border-radius: 8px;
   margin-bottom: 20px;
+}
+
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.content {
+  flex: 1;
+}
+
+h1 {
+  color: #484745
+}
+
+.navbar {
+  background-color: transparent !important;
+  color: black !important;
+}
+
+.navbar a {
+  color: black !important;
+}
+
+footer.bg-primary {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border-top: 1px solid black;
+}
+
+footer .ft {
+  color: black;
+}
+
+.custom-card {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  color: #000;
+}
+
+  a.bg-primary {
+  background-color: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid black;
+  color: black;
 }
