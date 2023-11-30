@@ -1,6 +1,6 @@
 Salut <%= @user.email %> !
 
-Nous avons bien reçu ton paiement de <%= number_to_currency(calculate_total_amount(@order.order_items)) %>.
+Nous avons bien reçu ton paiement de <%= @total %>€.
 
 Voici donc ta commande :
 <% @order.order_items.each do |order_item| %>
@@ -8,4 +8,4 @@ Voici donc ta commande :
   Image: <%= order_item.item.image_url %>
 <% end %>
 
-À très vite sur The-Chaton-Project.fr !
+À très vite sur https://the-kitten-project-924e8cb48f6e.herokuapp.com/ !

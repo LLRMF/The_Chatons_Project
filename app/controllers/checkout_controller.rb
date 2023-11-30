@@ -17,7 +17,8 @@ class CheckoutController < ApplicationController
         }
       ],
       metadata: {
-        order_id: @order_id
+        order_id: @order_id,
+        total_amount: @total_amount
       },
       mode: 'payment',
       customer_email: current_user.email,
@@ -32,8 +33,10 @@ class CheckoutController < ApplicationController
     @payment_intent = Stripe::PaymentIntent.retrieve(@session.payment_intent)
     @user = current_user
     @order = Order.new(user_id: current_user.id)
+    @total = @session.metadata.total_amount
     create_order_items(current_user.cart.cart_items) if @order.save
     clear_user_cart if @payment_intent.status == 'succeeded'
+    OrderMailer.order_confirmation(@user, @order).deliver_now if @payment_intent.status == 'succeeded'
   end
 
   def cancel
@@ -55,5 +58,4 @@ class CheckoutController < ApplicationController
   def clear_user_cart
     current_user.cart.cart_items.destroy_all
   end
-
 end
