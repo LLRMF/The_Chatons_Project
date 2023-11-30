@@ -5,9 +5,7 @@
   </head>
   <body>
     <h1>Salut <%= @user.email %> !</h1>
-    <p>Nous avons bien reçu ton paiement de <%= number_to_currency(calculate_total_amount(@order.order_items)) %>.</p>
-
-    <!-- La logique pour récupérer chaque image de la commande (order) du utilisateur concerné -->
+    <p>Nous avons bien reçu ton paiement de <%= @total %>€.</p>
     <p>Voici donc ta commande :</p>
     <% @order.order_items.each do |order_item| %>
       <div>
@@ -15,7 +13,6 @@
         <p>Image: <%= order_item.item.image_url %></p>
       </div>
     <% end %>
-
     <p>À très vite sur The-Chaton-Project.fr !</p>
   </body>
 </html>
