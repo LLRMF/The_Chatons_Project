@@ -1,0 +1,84 @@
+.btn-secondary {
+  background-color:#E7BCDE;
+  
+}
+.footer-custom{ color :rgb(15, 11, 11)}
+.custom-bg-color {
+  background-color:#BB9CC0 
+}
+.text-custom-color {
+  color: rgb(226, 219, 219);
+}
+
+body {
+  background-image: url('/assets/bk3.jpg');
+  background-size: cover; }
+
+  .ft{color:aliceblue}
+
+
+  
+  .carrejaune_accueil div{background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.4px);
+    -webkit-backdrop-filter: blur(7.4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;}
+  .carregris_accueil{
+    margin-top: 30px; padding: 20px;
+  }
+
+  
+/* Ajoutez ces styles pour rendre les cartes plus stylées */
+.card {
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Rendez les boutons plus stylés */
+.btn {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+/* Ajoutez un peu d'espacement entre les cartes */
+.mb-4 {
+  margin-bottom: 20px;
+}
+
+/* Centrez le titre de la carte */
+.card-title {
+  text-align: center;
+}
+
+/* Ajoutez de l'espace autour du titre */
+.card-body {
+  padding: 20px;
+}
+
+/* Rendez l'image de la carte arrondie */
+.card-img-top {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Centrez les boutons dans la carte */
+.d-flex {
+  justify-content: center;
+}
+
+/* Ajoutez une ombre légère sous la liste des photos */
+#page_title {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
