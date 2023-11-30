@@ -1,27 +1,19 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
-# Assure-toi d'inclure les dépendances nécessaires
+
 require 'faker'
 
 # Supprime tous les utilisateurs et articles existants
 Item.destroy_all
 User.destroy_all
-
+Cart.destroy_all
+Order.destroy_all
 # Crée 5 utilisateurs avec des adresses e-mail aléatoires et un mot de passe par défaut
 # Création des utilisateurs
-5.times do
-  user = User.create(
-    email: Faker::Internet.email(domain: 'yopmail.com'),
-    password: "mdp1234"
-  )
-end
+# 5.times do
+#   user = User.create(
+#     email: Faker::Internet.email(domain: 'yopmail.com'),
+#     password: "mdp1234"
+#   )
+# end
 
 image_urls = [
   'https://img.freepik.com/photos-gratuite/gros-plan-chatons-explorant-nature_23-2150782397.jpg?w=2000&t=st=1701343677~exp=1701344277~hmac=b05f8976d68b7296c7717d620f950156850500428d689ac42f540b458e5d8439',
@@ -44,11 +36,7 @@ image_urls = [
   'https://img.freepik.com/photos-gratuite/capture-ecran-mignon-petit-chaton-noir-blanc-dans-panier-du-textile-vert_181624-53490.jpg?w=1800&t=st=1701345442~exp=1701346042~hmac=b10449abda2c2e31b4b7785ca3df56578ed304533e72b354abb3ab0516181b29',
   'https://img.freepik.com/photos-gratuite/beau-chaton-fleurs-exterieur_23-2150752812.jpg?t=st=1701345377~exp=1701345977~hmac=2b97ee0702a7b2b0345954676b62df92359538cc2a06abc30c765c8f7bcf1f3d',
   'https://img.freepik.com/photos-gratuite/beau-chaton-fleurs-interieur_23-2150752846.jpg?w=1060&t=st=1701345535~exp=1701346135~hmac=acf4a60bddde5212391f9f4d188e3f7dd93b86b7f12661ab241fcfa937279367',
-  
-  
-
 ].shuffle
-
 
 # Création de 20 articles aléatoires
 items = []
@@ -58,10 +46,7 @@ items = []
     description: Faker::Lorem.characters(number: 100, min_alpha: 4),
     price: Faker::Number.decimal(l_digits: 2),
     image_url: image_urls.pop,
-
   )
   items << item  # Stocke les articles créés dans un tableau
-
-
 end
 
