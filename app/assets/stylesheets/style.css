@@ -159,3 +159,42 @@ footer .ft {
 }
 a:hover{transform: scale(1.1);transition: all 0.5s;}
 a{transition: all 0.5s;}
+
+#div-a-masquer {
+  /* border: 1px solid black; */
+  /* border-radius: 20px; */
+  /* background: white; */
+}
+
+#div-a-masquer .btn {
+  background: none;
+  color: black;
+  width: 48%;
+  height: fit-content;
+  border: none;
+  border: none;
+  text-transform: lowercase;
+  border: 1px solid black;
+  border-radius: 20px;
+  font-weight: bolder;
+
+}
+#div-a-masquer a:hover , #div-a-masquer button:hover{
+transform: scale(1)!important;
+background:black;
+color: white; 
+transition: all 0.5s;
+}
+
+#div-a-masquer .add-to-cart {
+  width: 100%!important;
+  border-right:none ;
+  background: #E7BCDE;
+  border-radius: 20px;
+  color: black;
+  border: none;
+}
+
+#div-a-masquer .form-inline {
+  width: 48%;
+}
