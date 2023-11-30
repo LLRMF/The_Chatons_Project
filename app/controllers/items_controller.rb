@@ -10,14 +10,14 @@ class ItemsController < ApplicationController
 
   def add_to_cart
     @item = Item.find(params[:id])
-    @cart = current_user.cart
-  
+    
     if user_signed_in?
+      @cart = current_user.cart
       if @cart
         if @cart.cart_items.exists?(item_id: @item.id)
           redirect_to cart_path, notice: 'Cet article est déjà dans votre panier!'
         else
-          @cart_item = @cart.cart_items.create(item: @item)
+          @cart_item = @cart.cart_items.create(item_id: @item.id, quantity: 1)
           redirect_to cart_path, notice: 'Article ajouté au panier!'
         end
       else

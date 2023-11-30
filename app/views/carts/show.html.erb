@@ -1,15 +1,17 @@
-<!-- carts/show.html.erb -->
 <h1>Votre Panier</h1>
 <% if @cart_items.any? %>
   <ul>
     <% @cart_items.each do |cart_item| %>
       <li>
-        <%= cart_item.item.title %> - <%= cart_item.quantity %>
+        <%= cart_item.item.title %> - 
+        <%= number_to_currency(cart_item.item.price * cart_item.quantity) %>
         <%= button_to 'Retirer', remove_item_cart_path(item_id: cart_item.item.id), remote: true, method: :delete, form_class: "form-inline", class: "btn btn-dark btn-lg add-to-cart", data: { item_id: cart_item.item.id } %>
       </li>
     <% end %>
   </ul>
+  <p>Total: <%= number_to_currency(@cart_items.sum { |cart_item| cart_item.item.price * cart_item.quantity }) %></p>
+  <%= button_to "Nouvelle commande", orders_path, method: :post %>
 <% else %>
-  <p>Dommage, votre panier est vide !</p>
+  <p>Votre panier est vide !</p>
   <p>Allez vite le remplir, on se retrouve après.</p>
 <% end %>

@@ -1,7 +1,15 @@
-<h1>Ordersshow</h1>
-<p>Find me in app/views/orders/show.html.erb</p>
-
-<div class="container mt-5">
-  <h1>Order Details</h1>
-  <p><strong>User ID:</strong> <%= @order.user_id %></p>
-</div>
+<h1>Votre commande</h1>
+<% if @order_items.present? %>
+  <ul>
+    <% @order_items.each do |order_item| %>
+      <li>
+        <%= order_item.item.title %>
+        <%= number_to_currency(order_item.item.price * order_item.quantity) %>
+      </li>
+    <% end %>
+  </ul>
+  <p>Total: <%= number_to_currency(@total_amount) %></p>
+  <%= button_to "Accéder au paiement", checkout_create_path(total: @total_amount, order_id: @order.id), class: "btn btn-primary", data: { turbo: false } %> <!-- Assure-toi de bien rediriger vers le chemin approprié -->
+<% else %>
+  <p>Votre commande est vide !</p>
+<% end %>
