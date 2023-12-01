@@ -2,10 +2,7 @@
 require 'faker'
 
 # Supprime tous les utilisateurs et articles existants
-Item.destroy_all
-User.destroy_all
-Cart.destroy_all
-Order.destroy_all
+
 # Crée 5 utilisateurs avec des adresses e-mail aléatoires et un mot de passe par défaut
 # Création des utilisateurs
 # 5.times do
