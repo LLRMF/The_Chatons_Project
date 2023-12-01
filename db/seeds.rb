@@ -50,3 +50,4 @@ items = []
   items << item  # Stocke les articles créés dans un tableau
 end
 
+User.create(email: 'admin@admin.com', password: 'mdp1234', admin: true)
