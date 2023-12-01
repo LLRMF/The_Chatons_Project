@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  
+  namespace :admin do
+    resources :carts
+    resources :cart_items
+    resources :items
+    resources :orders
+    resources :order_items
+    resources :users
+  
+    root to: "carts#index"
+  end
   # Defines the root path route ("/")
   root "static_pages#home"
   devise_for :users
