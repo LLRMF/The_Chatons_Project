@@ -12,6 +12,8 @@ gem "dotenv-rails"
 
 gem "stripe"
 
+gem 'administrate'
+
 
 gem "aws-sdk-s3", require: true
 
